@@ -7,25 +7,25 @@ type taskType = {
 };
 
 export class Todo {
-  toDoList: taskType[] = [];
+  tasks: taskType[] = [];
 
   constructor() {
     makeAutoObservable(this);
   }
   add(task: taskType) {
-    this.toDoList.unshift(task);
+    this.tasks.unshift(task);
   }
   remove(id: number) {
-    this.toDoList = this.toDoList.filter((task) => task.id !== id);
+    this.tasks = this.tasks.filter((task) => task.id !== id);
   }
   done(id: number) {
-    this.toDoList = this.toDoList.map((task) => {
+    this.tasks = this.tasks.map((task) => {
       if (task.id === id) task.done = true;
       return task;
     });
   }
   undone(id: number) {
-    this.toDoList = this.toDoList.map((task) => {
+    this.tasks = this.tasks.map((task) => {
       if (task.id === id) task.done = false;
       return task;
     });

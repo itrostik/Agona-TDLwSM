@@ -3,7 +3,7 @@ import { MouseEvent, KeyboardEvent, useState } from "react";
 import todo from "../mobx/store/todo.ts";
 import { observer } from "mobx-react-lite";
 export const App = observer(() => {
-  const tasks = todo.toDoList;
+  const tasks = todo.tasks;
   const [value, setValue] = useState<string>("");
   function addTask(
     event: MouseEvent<HTMLButtonElement> | KeyboardEvent<HTMLInputElement>,
